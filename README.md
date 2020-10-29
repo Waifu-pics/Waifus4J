@@ -6,17 +6,33 @@ Refer to [the docs](https://waifu.pics/docs) for available endpoints currently i
 ## Add to project
 For Maven
 ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+```xml
 <dependency>
-  <groupId>pics.waifu</groupId>
-  <artifactId>waifus4j</artifactId>
-  <version>VERSION</version>
-  <type>pom</type>
+    <groupId>com.github.Waifu-pics</groupId>
+    <artifactId>Waifus4J</artifactId>
+    <version>master-SNAPSHOT</version>
 </dependency>
 ```
 
 For Gradle
+```groovy
+allprojects {
+    repositories {
+		maven { url 'https://jitpack.io' }
+	}
+}
 ```
-compile 'pics.waifu:waifus4j:VERSION'
+```groovy
+dependencies {
+    implementation 'com.github.Waifu-pics:Waifus4J:master-SNAPSHOT'
+}
 ```
 ## Examples
 Get a random image from waifu endpoint in `sfw` category
