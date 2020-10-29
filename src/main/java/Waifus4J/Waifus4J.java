@@ -6,14 +6,28 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Waifus4J {
-    private static String BaseURL = "https://waifu.pics/api";
+    private static final String BaseURL = "https://waifu.pics/api";
 
+    /**
+     * Gets an SFW image from the API
+     * Possible sfw endpoints at https://waifu.pics/docs
+     * @param endpoint the endpoint to query
+     * @return image URL
+     */
     public String getSFWImage(String endpoint) {
         return makeRequest(false, endpoint);
     }
+
+    /**
+     * Gets an NSFW image from the API
+     * Possible nsfw endpoints at https://waifu.pics/docs
+     * @param endpoint the endpoint to query
+     * @return image URL
+     */
     public String getNSFWImage(String endpoint) {
         return makeRequest(true, endpoint);
     }
+
     private String makeRequest(boolean nsfw, String type) {
         String rating = nsfw ? "nsfw" : "sfw";
 
